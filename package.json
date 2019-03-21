@@ -1,6 +1,6 @@
 {
   "name": "myza",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "myza (/ˈmaɪzə/): Author emails with React & friends.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",

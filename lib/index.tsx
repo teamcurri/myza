@@ -1,5 +1,6 @@
 import fs from 'fs'
 import juice from 'juice'
+import path from 'path'
 import pretty from 'pretty'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
@@ -8,7 +9,8 @@ import { Center } from '../components/Center'
 // tslint:disable-next-line
 import ReactDOMServer from 'react-dom/server'
 
-const emailHtml = fs.readFileSync('./components/index.html', { encoding: 'utf8' })
+const filePath = path.resolve(__dirname, '../components/index.html')
+const emailHtml = fs.readFileSync(filePath, { encoding: 'utf8' })
 
 interface IEmailOptions {
   fontFamily: string
