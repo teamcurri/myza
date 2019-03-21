@@ -1,12 +1,15 @@
 {
-  "name": "myna",
+  "name": "myza",
   "version": "0.1.0",
-  "description": "myna (/ˈmaɪnə/): Author emails with React & friends.",
+  "description": "myza (/ˈmaɪzə/): Author emails with React & friends.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
-  "website": "https://github.com/teamcurri/myna",
+  "website": "https://github.com/teamcurri/myza",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc",
+    "dev": "tsc -w",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "files": [
