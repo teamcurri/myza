@@ -1,23 +1,37 @@
 {
-  "name": "@curri/myna",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "myna",
+  "version": "0.1.0",
+  "description": "myna (/ˈmaɪnə/): Author emails with React & friends.",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "website": "https://github.com/teamcurri/myna",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
+  "files": [
+    "dist"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "juice": "^5.2.0",
+    "pretty": "^2.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/pretty": "^2.0.0",
+    "@types/react-dom": "^16.8.3",
     "@types/styled-components": "^4.1.12",
+    "jest": "^24.5.0",
+    "react-test-renderer": "^16.8.4",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
     "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.4000"
   }
 }
