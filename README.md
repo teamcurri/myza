@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="myna" src="https://user-images.githubusercontent.com/659829/54764206-8dfee700-4bb4-11e9-8c11-cbf0a7b2ad5e.png" width="100">
+  <img alt="myna" src="https://user-images.githubusercontent.com/659829/54764206-8dfee700-4bb4-11e9-8c11-cbf0a7b2ad5e.png" width="300">
 </p>
 
 <h2 align="center">
