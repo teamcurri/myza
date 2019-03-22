@@ -1,6 +1,6 @@
 {
   "name": "myza",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "myza (/ˈmaɪzə/): Author emails with React & friends.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
@@ -9,7 +9,9 @@
     "test": "jest",
     "build": "tsc",
     "dev": "tsc -w",
-    "prepublishOnly": "npm run build"
+    "clean": "if [ -d dist ]; then rm -rf dist; fi",
+    "mv:index": "cp ./components/index.html ./dist/components",
+    "prepublishOnly": "npm run clean && npm run build && npm run mv:index"
   },
   "keywords": [],
   "files": [
