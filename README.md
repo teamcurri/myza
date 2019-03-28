@@ -49,7 +49,7 @@ const WelcomeEmail = ({ firstName }) =>
 const renderedEmail = Myza.renderEmail(
   WelcomeEmail,
   { firstname: 'Myza' },
-  { fontFamily: `"Comic Sans", Papyrus, Arial, sans-serif' }
+  { fontFamily: `"Comic Sans", Papyrus, Arial, sans-serif'` }
 )
 ```
 
