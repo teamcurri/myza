@@ -65,14 +65,19 @@ The core Myza engine works as follows:
 
 ## Components
 
-- [`<Center />`](https://github.com/teamcurri/myza/blob/master/components/Center.tsx): center passed content
-- _More to come!_
+- [`<Center />`](https://github.com/teamcurri/myza/blob/master/components/Center.tsx): Center passed content
+- [`<Spacer value={50}/>`](https://github.com/teamcurri/myza/blob/master/components/Spacer.tsx): Use to add space between elements
+- [`<MaxWidth value={320}/>`](https://github.com/teamcurri/myza/blob/master/components/MaxWidth.tsx): Container with a max width
 
 ## Roadmap
 
 - Build out suite of battle-tested, cross-client components
 - Run suite of components through Storybook
 - Set up email client testing
+
+## Changelog
+
+- 0.4.0: `<Spacer />` and `<MaxWidth />` components; better Outlook for Windows support
 
 ## Myza Logo
 

@@ -5,6 +5,8 @@ import pretty from 'pretty'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 import { Center } from '../components/Center'
+import { MaxWidth } from '../components/MaxWidth'
+import { Spacer } from '../components/Spacer'
 
 // tslint:disable-next-line
 import ReactDOMServer from 'react-dom/server'
@@ -43,5 +45,7 @@ export default {
 }
 
 export const Components = {
-  Center
+  Center,
+  MaxWidth,
+  Spacer,
 }
