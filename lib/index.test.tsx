@@ -1,7 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 import Myza, { Components } from './'
 
-const SimpleEmail = ({ firstName }) => <div>Welcome to Curri, {firstName}</div>
+const SimpleWrapper = styled.div`
+  background: pink;
+`
+
+const SimpleEmail = ({ firstName }) => <SimpleWrapper>Welcome to Curri, {firstName}</SimpleWrapper>
 
 it('renders correctly', () => {
   const rendered = Myza.renderEmail(SimpleEmail, { firstName: 'Brian' })

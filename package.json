@@ -1,6 +1,6 @@
 {
   "name": "myza",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "myza (/ˈmaɪzə/): Author emails with React & friends.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
@@ -11,7 +11,7 @@
     "dev": "tsc -w",
     "clean": "if [ -d dist ]; then rm -rf dist; fi",
     "mv:index": "cp ./components/index.html ./dist/components",
-    "prepublishOnly": "npm run clean && npm run build && npm run mv:index"
+    "prepublishOnly": "npm t && npm run clean && npm run build && npm run mv:index"
   },
   "keywords": [],
   "files": [
@@ -20,11 +20,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "juice": "^5.2.0",
-    "pretty": "^2.0.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "styled-components": "4.2.0"
+    "juice": "5.2.0",
+    "pretty": "2.0.0"
+  },
+  "peerDependencies": {
+    "styled-components": "4.2.0",
+    "react": "16.7.0",
+    "react-dom": "16.7.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
