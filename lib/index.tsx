@@ -5,24 +5,27 @@ import pretty from 'pretty'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 import { Center } from '../components/Center'
-import { MaxWidth } from '../components/MaxWidth'
+import { FixedWidthContainer } from '../components/FixedWidthContainer'
 import { Spacer } from '../components/Spacer'
 
-// tslint:disable-next-line
 import ReactDOMServer from 'react-dom/server'
 
 const filePath = path.resolve(__dirname, '../components/index.html')
 const emailHtml = fs.readFileSync(filePath, { encoding: 'utf8' })
 
-interface IEmailOptions {
+interface EmailOptions {
   fontFamily: string
 }
 
-const defaultEmailOptions: IEmailOptions = {
+const defaultEmailOptions: EmailOptions = {
   fontFamily: `Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`
 }
 
-const renderEmail = (EmailComponent: React.ElementType, variables: {}, emailOptions: IEmailOptions = defaultEmailOptions) => {
+const renderEmail = (
+  EmailComponent: React.ElementType,
+  variables: {},
+  emailOptions: EmailOptions = defaultEmailOptions
+): string => {
   const options = { ...defaultEmailOptions, ...emailOptions }
   const sheet = new ServerStyleSheet()
 
@@ -32,9 +35,18 @@ const renderEmail = (EmailComponent: React.ElementType, variables: {}, emailOpti
 
   const styleTags = sheet.getStyleTags()
 
-  const htmlWithFontFamily = emailHtml.replace('/* MYZA_FONT_FAMILY_INJECT */', options.fontFamily)
-  const htmlWithStyles = htmlWithFontFamily.replace('<!-- MYZA_STYLES_INJECT -->', styleTags)
-  const htmlWithComponent = htmlWithStyles.replace('<!-- MYZA_BODY_INJECT -->', renderedComponent)
+  const htmlWithFontFamily = emailHtml.replace(
+    '/* MYZA_FONT_FAMILY_INJECT */',
+    options.fontFamily
+  )
+  const htmlWithStyles = htmlWithFontFamily.replace(
+    '<!-- MYZA_STYLES_INJECT -->',
+    styleTags
+  )
+  const htmlWithComponent = htmlWithStyles.replace(
+    '<!-- MYZA_BODY_INJECT -->',
+    renderedComponent
+  )
 
   const email = pretty(juice(htmlWithComponent))
   return email
@@ -46,6 +58,6 @@ export default {
 
 export const Components = {
   Center,
-  MaxWidth,
-  Spacer,
+  FixedWidthContainer,
+  Spacer
 }

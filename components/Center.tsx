@@ -1,11 +1,17 @@
-import React, { SFC } from 'react'
+import React, { FunctionComponent } from 'react'
 
-export const Center: SFC<{ className?: string }> = ({ children, className }) =>
-  // @ts-ignore
-  <table width="100%" border="0" cellSpacing="0" cellPadding="0" className={className}>
+export interface CenterProps {
+  children: React.ReactChildren | string[]
+  className?: string
+}
+
+export const Center: FunctionComponent<CenterProps> = ({
+  children,
+  className
+}: CenterProps): React.ReactElement => (
+  <table cellSpacing="0" cellPadding="0" className={className}>
     <tr>
-      <td align="center">
-        {children}
-      </td>
+      <td align="center">{children}</td>
     </tr>
   </table>
+)

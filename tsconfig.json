@@ -12,7 +12,11 @@
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "jest"
+    ]
   },
   "include": [
     "./src/**/*",

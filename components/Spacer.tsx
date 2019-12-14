@@ -1,8 +1,13 @@
 import React from 'react'
 
-export const Spacer = ({ value }) =>
+export interface SpacerProps {
+  value: number
+}
+
+export const Spacer = ({ value }: SpacerProps): React.ReactElement => (
   <table cellPadding={0} cellSpacing={0} style={{ border: 0 }}>
     <tr>
       <td style={{ paddingTop: `${value}px` }} />
-    </tr >
+    </tr>
   </table>
+)
