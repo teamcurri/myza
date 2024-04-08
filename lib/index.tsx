@@ -23,7 +23,7 @@ const defaultEmailOptions: EmailOptions = {
 
 const renderEmail = (
   EmailComponent: React.ElementType,
-  variables: {},
+  variables: object,
   emailOptions: EmailOptions = defaultEmailOptions
 ): string => {
   const options = { ...defaultEmailOptions, ...emailOptions }
