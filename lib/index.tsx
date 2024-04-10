@@ -7,8 +7,7 @@ import { ServerStyleSheet } from 'styled-components'
 import { Center } from '../components/Center'
 import { FixedWidthContainer } from '../components/FixedWidthContainer'
 import { Spacer } from '../components/Spacer'
-
-import ReactDOMServer from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 
 const filePath = path.resolve(__dirname, '../components/index.html')
 const emailHtml = fs.readFileSync(filePath, { encoding: 'utf8' })
@@ -29,7 +28,7 @@ const renderEmail = (
   const options = { ...defaultEmailOptions, ...emailOptions }
   const sheet = new ServerStyleSheet()
 
-  const renderedComponent = ReactDOMServer.renderToStaticMarkup(
+  const renderedComponent = renderToString(
     sheet.collectStyles(<EmailComponent {...variables} />)
   )
 
@@ -39,6 +38,7 @@ const renderEmail = (
     '/* MYZA_FONT_FAMILY_INJECT */',
     options.fontFamily
   )
+
   const htmlWithStyles = htmlWithFontFamily.replace(
     '<!-- MYZA_STYLES_INJECT -->',
     styleTags
@@ -48,7 +48,9 @@ const renderEmail = (
     renderedComponent
   )
 
-  const email = pretty(juice(htmlWithComponent))
+  const juiced = juice(htmlWithComponent)
+
+  const email = pretty(juiced)
   return email
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Myza, { Components } from './'
+import { ComplexEmail } from './test-components/ComplexEmail'
 
 const SimpleWrapper = styled.div`
   background: pink;
@@ -16,6 +17,14 @@ const SimpleEmail = ({ firstName }: FirstName): React.ReactElement => {
 
 it('renders correctly', () => {
   const rendered = Myza.renderEmail(SimpleEmail, { firstName: 'Brian' })
+  const tree = JSON.stringify({ body: rendered })
+  expect(tree).toMatchSnapshot()
+})
+
+it('renders correctly for a more complex email', () => {
+  const rendered = Myza.renderEmail(ComplexEmail, {
+    name: 'Shaun Emerson'
+  })
   const tree = JSON.stringify({ body: rendered })
   expect(tree).toMatchSnapshot()
 })
