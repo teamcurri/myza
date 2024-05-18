@@ -1,6 +1,4 @@
-import fs from 'fs'
 import juice from 'juice'
-import path from 'path'
 import pretty from 'pretty'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
@@ -8,8 +6,6 @@ import { Center } from '../components/Center'
 import { FixedWidthContainer } from '../components/FixedWidthContainer'
 import { Spacer } from '../components/Spacer'
 import { renderToString } from 'react-dom/server'
-
-const filePath = path.resolve(__dirname, '../components/index.html')
 
 import { BaseTemplate } from './base-template'
 

@@ -1,18 +1,17 @@
 {
   "name": "myza",
-  "version": "3.2.0-rc.1",
+  "version": "3.2.0-rc.2",
   "description": "myza (/ˈmaɪzə/): Author emails with React & friends.",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
   "website": "https://github.com/teamcurri/myza",
   "scripts": {
     "test": "jest",
-    "build": "tsc && yarn cp:index",
-    "dev": "yarn clean && yarn build && tsc -w",
+    "build": "tsc",
+    "dev": "npm run clean && npm run build && tsc -w",
     "clean": "if [ -d dist ]; then rm -rf dist; fi",
-    "cp:index": "cp ./components/index.html ./dist/components",
     "lint": "eslint lib/**/*.tsx components/**/*.tsx --fix",
-    "prepublishOnly": "yarn run lint && yarn run clean && yarn run build && yarn run cp:index"
+    "prepublishOnly": "npm run lint && npm run clean && npm run build"
   },
   "keywords": [],
   "files": [
