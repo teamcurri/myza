@@ -1,6 +1,4 @@
-import fs from 'fs'
 import juice from 'juice'
-import path from 'path'
 import pretty from 'pretty'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
@@ -9,8 +7,7 @@ import { FixedWidthContainer } from '../components/FixedWidthContainer'
 import { Spacer } from '../components/Spacer'
 import { renderToString } from 'react-dom/server'
 
-const filePath = path.resolve(__dirname, '../components/index.html')
-const emailHtml = fs.readFileSync(filePath, { encoding: 'utf8' })
+import { BaseTemplate } from './base-template'
 
 interface EmailOptions {
   fontFamily: string
@@ -34,7 +31,7 @@ const renderEmail = (
 
   const styleTags = sheet.getStyleTags()
 
-  const htmlWithFontFamily = emailHtml.replace(
+  const htmlWithFontFamily = BaseTemplate.replace(
     '/* MYZA_FONT_FAMILY_INJECT */',
     options.fontFamily
   )
