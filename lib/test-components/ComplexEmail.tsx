@@ -56,6 +56,8 @@ const ComplexEmail = ({ name }: { name: string }) => {
         labore et dolore magna aliqua.
       </p>
 
+      <a href="google.com?foo=bar&bar=baz">Visit Google</a>
+
       {/* Nested styled divs */}
       <StyledDiv>
         <StyledParagraph>Nested Styled Div</StyledParagraph>

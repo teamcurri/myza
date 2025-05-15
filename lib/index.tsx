@@ -6,6 +6,7 @@ import { Center } from '../components/Center'
 import { FixedWidthContainer } from '../components/FixedWidthContainer'
 import { Spacer } from '../components/Spacer'
 import { renderToString } from 'react-dom/server'
+import { decode as decodeHtmlEntities } from 'html-entities'
 
 import { BaseTemplate } from './base-template'
 
@@ -29,6 +30,8 @@ const renderEmail = (
     sheet.collectStyles(<EmailComponent {...variables} />)
   )
 
+  const htmlEntitityDecoded = decodeHtmlEntities(renderedComponent)
+
   const styleTags = sheet.getStyleTags()
 
   const htmlWithFontFamily = BaseTemplate.replace(
@@ -42,7 +45,7 @@ const renderEmail = (
   )
   const htmlWithComponent = htmlWithStyles.replace(
     '<!-- MYZA_BODY_INJECT -->',
-    renderedComponent
+    htmlEntitityDecoded
   )
 
   const juiced = juice(htmlWithComponent)
